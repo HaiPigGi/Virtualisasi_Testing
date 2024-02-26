@@ -1,3 +1,56 @@
-{ 
-	"Cek_Vbox" : "ada",
+{
+	"cek_vbox": "available",
+	"installation_stages": [
+		{
+			"stage": "create_virtual_machine",
+			"steps": {
+				"check_vm_ubuntuserver": "not available",
+				"create_vm": "click add",
+				"change_vm_name": "Ubuntu_Server",
+				"change_folder_location": "C:\\Users\\oment\\VirtualBox VMs\\ubuntu server ",
+				"iso_image": "D:\\ubuntu-22.04.3-live-server-amd64.iso",
+				"change_vm_username": "ubuntu server",
+				"change_vm_password": "adaAja",
+				"set_base_memory": "2048MB",
+				"set_processor": "2",
+				"create_virtual_hdd": "10GB",
+				"finish": "Click finish"
+			}
+		},
+		{
+			"stage": "install_ubuntu_server",
+			"steps": {
+				"set_language": "English",
+				"update_installer": "Update to the new installer",
+				"configure_keyboard": "Done",
+				"choose_ubuntu_type": "Ubuntu Server (minimized)",
+				"network_connection": "Done",
+				"configure_proxy": "Done",
+				"configure_ubuntu_archive_mirror": "Done",
+				"configure_guided_storage": "Done",
+				"configure_storage": "Done",
+				"profile_settings": {
+					"name": "HaiPigGi",
+					"server_name": "haipiggi",
+					"username": "haipiggi",
+					"password": "adaAja"
+				},
+				"upgrade_to_ubuntu_pro": "Skip for now",
+				"configure_ssh": "Done",
+				"server_features": "Skip",
+				"reboot": "Reboot Now"
+			}
+		},
+		{
+			"stage": "clone_vm",
+			"steps": {
+				"vm_settings": {
+					"name": "Ubuntu server clone",
+					"path": "C:\\Users\\oment\\VirtualBox VMs\\ubuntu server clone ",
+					"mac_address_policy": "Include only NAT network adapter MAC addresses",
+					"clone_type": "Full Clone"
+				}
+			}
+		}
+	]
 }
