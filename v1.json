@@ -1,3 +1,30 @@
-{ 
-	"Cek_Vbox" : "ada",
+{
+	"cek_vbox": "available",
+	"installation_steps": [
+		{
+			"step": "Change profile settings",
+			"actions": {
+				"login_to_ubuntuServer": "Enter username and password",
+				"check_hostname_file": "ls /etc/hostname : available",
+				"check_nano": "nano : not available",
+				"update_repository": "sudo apt update",
+				"install_nano": "sudo apt install nano",
+				"change_hostname_file": {
+					"open_file": "sudo nano /etc/hostname",
+					"change_name": "bryan",
+					"save": "ctrl+x"
+				},
+				"change_host_file": {
+					"open_file": "sudo nano /etc/hosts",
+					"change": "127.0.1.1 website",
+					"save": "ctrl+x"
+				},
+				"change_user_password": {
+					"command": "sudo passwd bryan",
+					"new_password": "adaAja20"
+				},
+				"reboot_system": "sudo reboot"
+			}
+		}
+	]
 }
