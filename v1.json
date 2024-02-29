@@ -1,3 +1,58 @@
-{ 
-	"Cek_Vbox" : "ada",
-}
+{
+	"Cek_Vbox": "ada",
+	"judul": "Tutorial: Pengujian Koneksi antara Mesin Virtual Ubuntu Server",
+	"tutorial": {
+	  "langkah_1": {
+		"deskripsi": "Pastikan kedua mesin virtual Ubuntu Server (asli dan clone) berjalan di VirtualBox.",
+		"tindakan": [
+		  "Buka VirtualBox dan pastikan kedua mesin virtual berada dalam status 'running'."
+		]
+	  },
+	  "langkah_2": {
+		"deskripsi": "Uji koneksi antara kedua mesin virtual Ubuntu Server.",
+		"tindakan": [
+		  "Gunakan perintah ping dari salah satu mesin virtual ke mesin virtual lainnya menggunakan alamat IP yang sesuai."
+		]
+	  },
+	  "langkah_3": {
+		"deskripsi": "Uji koneksi dari sistem Windows menggunakan Git Bash.",
+		"tindakan": [
+		  "Buka Git Bash di sistem Windows Anda.",
+		  "Gunakan perintah ping dari Git Bash untuk menguji koneksi ke Ubuntu Server. Misalnya, jika alamat IP Ubuntu Server adalah '10.10.4.33', gunakan perintah: 'ping 10.10.4.33'."
+		]
+	  },
+	  "langkah_4": {
+		"deskripsi": "Atur port forwarding di VirtualBox untuk Ubuntu Server asli.",
+		"tindakan": [
+		  "Konfigurasikan port forwarding di VirtualBox untuk meneruskan port tertentu (misalnya, port SSH 22) dari mesin host ke mesin virtual Ubuntu Server asli."
+		]
+	  },
+	  "langkah_5": {
+		"deskripsi": "Uji koneksi dari Windows ke Ubuntu Server menggunakan port forwarding.",
+		"tindakan": [
+		  "Dari sistem Windows Anda, gunakan klien SSH untuk terhubung ke alamat IP mesin host dan port yang diteruskan (misalnya, 'ssh -p <port_diteruskan> username@alamat_ip_host').",
+		  "Jika berhasil, lanjutkan ke langkah berikutnya."
+		]
+	  },
+	  "langkah_6": {
+		"deskripsi": "Atur konfigurasi jaringan bridged untuk Ubuntu Server clone.",
+		"tindakan": [
+		  "Di pengaturan VirtualBox, konfigurasikan adaptor jaringan untuk Ubuntu Server clone agar menggunakan mode jaringan bridged."
+		]
+	  },
+	  "langkah_7": {
+		"deskripsi": "Uji koneksi dari Windows ke Ubuntu Server clone.",
+		"tindakan": [
+		  "Dari sistem Windows Anda, gunakan klien SSH untuk terhubung ke Ubuntu Server clone menggunakan alamat IP-nya.",
+		  "Jika berhasil, lanjutkan ke langkah terakhir."
+		]
+	  },
+	  "langkah_8": {
+		"deskripsi": "Uji koneksi antara kedua mesin virtual Ubuntu Server.",
+		"tindakan": [
+		  "Dari salah satu mesin virtual Ubuntu Server, gunakan perintah ping untuk menguji koneksi ke mesin virtual Ubuntu Server lainnya."
+		]
+	  }
+	}
+  }
+  
