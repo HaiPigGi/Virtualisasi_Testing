@@ -1,3 +1,147 @@
-{ 
-	"Cek_Vbox" : "ada",
-}
+{
+  "cek_vbox": "available",
+  "installation_stages": [
+    {
+      "stage": "create_virtual_machine",
+      "steps": {
+        "check_vm_ubuntuserver": "not available",
+        "create_vm": "click add",
+        "change_vm_name": "Ubuntu_Server",
+        "change_folder_location": "C:\\Users\\oment\\VirtualBox VMs\\ubuntu server ",
+        "iso_image": "D:\\ubuntu-22.04.3-live-server-amd64.iso",
+        "change_vm_username": "ubuntu server",
+        "change_vm_password": "adaAja",
+        "set_base_memory": "2048MB",
+        "set_processor": "2",
+        "create_virtual_hdd": "10GB",
+        "finish": "Click finish"
+      }
+    },
+    {
+      "stage": "install_ubuntu_server",
+      "steps": {
+        "set_language": "English",
+        "update_installer": "Update to the new installer",
+        "configure_keyboard": "Done",
+        "choose_ubuntu_type": "Ubuntu Server (minimized)",
+        "network_connection": "Done",
+        "configure_proxy": "Done",
+        "configure_ubuntu_archive_mirror": "Done",
+        "configure_guided_storage": "Done",
+        "configure_storage": "Done",
+        "profile_settings": {
+          "name": "HaiPigGi",
+          "server_name": "haipiggi",
+          "username": "haipiggi",
+          "password": "adaAja"
+        },
+        "upgrade_to_ubuntu_pro": "Skip for now",
+        "configure_ssh": "Done",
+        "server_features": "Skip",
+        "reboot": "Reboot Now"
+      }
+    },
+    {
+      "stage": "clone_vm",
+      "steps": {
+        "vm_settings": {
+          "name": "Ubuntu server clone",
+          "path": "C:\\Users\\oment\\VirtualBox VMs\\ubuntu server clone ",
+          "mac_address_policy": "Include only NAT network adapter MAC addresses",
+          "clone_type": "Full Clone"
+        }
+      }
+    }
+  ],
+  "Clone_Setting": [
+    {
+      "step": "Change profile settings",
+      "actions": {
+        "login_to_ubuntuServer": "Enter username and password",
+        "check_hostname_file": "ls /etc/hostname : available",
+        "check_nano": "nano : not available",
+        "update_repository": "sudo apt update",
+        "install_nano": "sudo apt install nano",
+        "change_hostname_file": {
+          "open_file": "sudo nano /etc/hostname",
+          "change_name": "bryan",
+          "save": "ctrl+x"
+        },
+        "change_host_file": {
+          "open_file": "sudo nano /etc/hosts",
+          "change": "127.0.1.1 website",
+          "save": "ctrl+x"
+        },
+        "change_user_password": {
+          "command": "sudo passwd bryan",
+          "new_password": "adaAja20"
+        },
+        "reboot_system": "sudo reboot"
+      }
+    }
+  ],
+  "ping_steps": [
+    {
+      "langkah_1": {
+        "deskripsi": "Pastikan kedua mesin virtual Ubuntu Server (asli dan clone) berjalan di VirtualBox.",
+        "tindakan": [
+          "Buka VirtualBox dan pastikan kedua mesin virtual berada dalam status 'running'."
+        ]
+      },
+      "langkah_2": {
+        "deskripsi": "Uji koneksi antara kedua mesin virtual Ubuntu Server.",
+        "tindakan": [
+          "Gunakan perintah ping dari salah satu mesin virtual ke mesin virtual lainnya menggunakan alamat IP yang sesuai."
+        ]
+      },
+      "langkah_4": {
+        "deskripsi": "Atur port forwarding di VirtualBox untuk Ubuntu Server asli.",
+        "tindakan": [
+          "Konfigurasikan port forwarding di VirtualBox untuk meneruskan port tertentu (misalnya, port SSH 22) dari mesin host ke mesin virtual Ubuntu Server asli."
+        ]
+      },
+      "langkah_5": {
+        "deskripsi": "Uji koneksi dari Windows ke Ubuntu Server menggunakan port forwarding.",
+        "tindakan": [
+          "Dari sistem Windows Anda, gunakan klien SSH untuk terhubung ke alamat IP mesin host dan port yang diteruskan (misalnya, 'ssh -p <port_diteruskan> username@alamat_ip_host').",
+          "Jika berhasil, lanjutkan ke langkah berikutnya."
+        ]
+      },
+      "langkah_6": {
+        "deskripsi": "Atur konfigurasi jaringan bridged untuk Ubuntu Server clone.",
+        "tindakan": [
+          "Di pengaturan VirtualBox, konfigurasikan adaptor jaringan untuk Ubuntu Server clone agar menggunakan mode jaringan bridged."
+        ]
+      },
+      "langkah_7": {
+        "deskripsi": "Uji koneksi dari Windows ke Ubuntu Server clone.",
+        "tindakan": [
+          "Dari sistem Windows Anda, gunakan klien SSH untuk terhubung ke Ubuntu Server clone menggunakan alamat IP-nya.",
+          "Jika berhasil, lanjutkan ke langkah terakhir."
+        ]
+      },
+      "langkah_8": {
+        "deskripsi": "Uji koneksi antara kedua mesin virtual Ubuntu Server.",
+        "tindakan": [
+          "Dari salah satu mesin virtual Ubuntu Server, gunakan perintah ping untuk menguji koneksi ke mesin virtual Ubuntu Server lainnya."
+        ]
+      }
+    }
+  ],
+  "ssh_steps": [
+    {
+      "description": "Uji SSH dari Windows menggunakan Git Bash.",
+      "actions": [
+        "Buka Git Bash di sistem Windows Anda.",
+        "Gunakan perintah SSH dari Git Bash untuk menguji koneksi ke Ubuntu Server. Contohnya, jika alamat IP dari Ubuntu Server adalah '10.10.4.33', gunakan perintah: 'ssh username@10.10.4.33'."
+      ]
+    },
+    {
+      "description": "Uji SSH dari Windows ke Ubuntu Server clone.",
+      "actions": [
+        "Dari sistem Windows Anda, gunakan klien SSH untuk terhubung ke alamat IP dari Ubuntu Server clone.",
+        "Jika berhasil, lanjutkan ke langkah berikutnya."
+      ]
+    }
+   ]
+ }
