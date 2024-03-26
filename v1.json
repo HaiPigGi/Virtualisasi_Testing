@@ -144,25 +144,6 @@
       ]
     }
    ],
-   "Java Instalation" : [
-    {
-      "description" : "Melakukan Instalasi java",
-      "actions" : [
-        "sudo apt update",
-        "sudo apt install default-jdk",
-        "java --version"
-      ]
-    } ,
-    {
-      "description" : "Membuat program java sederhana",
-      "actions" : [
-        "pilih folder untuk menyimpan file java",
-        "touch main.java",
-        "compile java dengan : ",
-        "java main.java"
-      ]
-    }
-   ],
   "Database Install": [
     {
       "description": "Instal Mysql Server",
@@ -206,46 +187,65 @@
   ],
   "WebServer Install": [
     {
-      "description": "Instal Apache Web Server",
+      "description": "Instal Nginx Web Server",
       "actions": [
-        "Melakukan instalasi Apache Web Server dengan menjalankan perintah berikut : ",
+        "Melakukan instalasi Nginx Web Server dengan menjalankan perintah berikut : ",
         "sudo apt update",
-        "sudo apt install apache2"
+        "sudo apt install nginx"
       ]
     },
     {
-      "description": "Start Apache Service",
+      "description": "Start Nginx Service",
       "actions": [
-        "Memulai layanan Apache dengan menjalankan perintah : ",
-        "sudo systemctl start apache2"
+        "Memulai layanan Nginx dengan menjalankan perintah : ",
+        "sudo systemctl start nginx"
       ]
     },
     {
-      "description": "Cek Status Apache Service",
+      "description": "Cek Status Nginx Service",
       "actions": [
-        "Mengecek status layanan Apache dengan menjalankan perintah : ",
-        "sudo systemctl status apache2"
+        "Mengecek status layanan Nginx dengan menjalankan perintah : ",
+        "sudo systemctl status nginx"
       ]
     },
     {
-      "description": "Enable Apache Service",
+      "description": "Enable Nginx Service",
       "actions": [
-        "Mengaktifkan Apache agar dijalankan secara otomatis pada saat boot dengan menjalankan perintah : ",
-        "sudo systemctl enable apache2"
+        "Mengaktifkan Nginx agar dijalankan secara otomatis pada saat boot dengan menjalankan perintah : ",
+        "sudo systemctl enable nginx"
       ]
     },
     {
       "description": "Konfigurasi Firewall",
       "actions": [
         "Jika menggunakan firewall, perlu mengizinkan lalu lintas HTTP dan HTTPS. Contoh untuk ufw (Uncomplicated Firewall): ",
-        "sudo ufw allow 'Apache Full'",
-        "sudo ufw allow 'Apache Secure'"
+        "sudo ufw allow 'Nginx HTTP'",
+        "sudo ufw allow 'Nginx HTTPS'"
       ]
     },
     {
-      "description": "Tes Apache",
+      "description": "Tes Nginx",
       "actions": [
-        "Buka web browser dan akses alamat IP server untuk memastikan Apache berjalan dengan baik."
+        "Buka web browser dan akses alamat IP server untuk memastikan Nginx berjalan dengan baik."
+      ]
+    }
+  ],
+  "Java Instalation" : [
+    {
+      "description" : "Melakukan Instalasi java",
+      "actions" : [
+        "sudo apt update",
+        "sudo apt install default-jdk",
+        "java --version"
+      ]
+    } ,
+    {
+      "description" : "Membuat program java sederhana",
+      "actions" : [
+        "pilih folder untuk menyimpan file java",
+        "touch main.java",
+        "compile java dengan : ",
+        "java main.java"
       ]
     }
   ]
