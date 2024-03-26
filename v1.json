@@ -162,5 +162,91 @@
         "java main.java"
       ]
     }
-   ]
- }
+   ],
+  "Database Install": [
+    {
+      "description": "Instal Mysql Server",
+      "actions": [
+        "Melakukan instalasi dengan menjalankan perintah berikut : ",
+        "sudo apt update",
+        "sudo apt install mysql-server"
+      ]
+    },
+    {
+      "description": "cek Status",
+      "actions": [
+        "Melakukan pengecekan status apakah mysql sudah berjalan atau tidak :  ",
+        "sudo systemctl start mysql.service"
+      ]
+    },
+    {
+      "description": "Create User",
+      "actions": [
+        "Membuat user baru selain root antara lain : ",
+        "sudo mysql -u root -p",
+        "CREATE USER 'bryan'@'%' IDENTIFIED WITH authentication_plugin BY 'adaAja';",
+        "ALTER USER 'bryan'@'%' IDENTIFIED WITH mysql_native_password BY 'adaAja';",
+        "Memberikan User akses : ",
+        "GRANT PRIVILEGE ON database.table TO 'bryan'@'%';",
+        "FLUSH PRIVILEGES;"
+      ]
+    },
+    {
+      "description": "Membuat Koneksi Ke Luar Dengan Port Porfwarding",
+      "actions": [
+        "Melakukan Set up untuk port dari mysql yaitu : 3306 pada vm (3306 adalah default port mysql)",
+        "Pada VM Buat Port Forwarding dari guest port 3306 ke port yang diinginkan",
+        "untuk ip bisa dibuat 0.0.0.0 agar bisa diakses dari mana saja"
+      ]
+    },
+    {
+      "description": "Melakukan Koneksi dari luar untuk mysql",
+      "actions": ["sudo mysql -u (username) -p (password) -h (host) -P (port)"]
+    }
+  ],
+  "WebServer Install": [
+    {
+      "description": "Instal Apache Web Server",
+      "actions": [
+        "Melakukan instalasi Apache Web Server dengan menjalankan perintah berikut : ",
+        "sudo apt update",
+        "sudo apt install apache2"
+      ]
+    },
+    {
+      "description": "Start Apache Service",
+      "actions": [
+        "Memulai layanan Apache dengan menjalankan perintah : ",
+        "sudo systemctl start apache2"
+      ]
+    },
+    {
+      "description": "Cek Status Apache Service",
+      "actions": [
+        "Mengecek status layanan Apache dengan menjalankan perintah : ",
+        "sudo systemctl status apache2"
+      ]
+    },
+    {
+      "description": "Enable Apache Service",
+      "actions": [
+        "Mengaktifkan Apache agar dijalankan secara otomatis pada saat boot dengan menjalankan perintah : ",
+        "sudo systemctl enable apache2"
+      ]
+    },
+    {
+      "description": "Konfigurasi Firewall",
+      "actions": [
+        "Jika menggunakan firewall, perlu mengizinkan lalu lintas HTTP dan HTTPS. Contoh untuk ufw (Uncomplicated Firewall): ",
+        "sudo ufw allow 'Apache Full'",
+        "sudo ufw allow 'Apache Secure'"
+      ]
+    },
+    {
+      "description": "Tes Apache",
+      "actions": [
+        "Buka web browser dan akses alamat IP server untuk memastikan Apache berjalan dengan baik."
+      ]
+    }
+  ]
+}
