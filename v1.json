@@ -143,6 +143,24 @@
         "Jika berhasil, lanjutkan ke langkah berikutnya."
       ]
     }
+   ],
+   "Java Instalation" : [
+    {
+      "description" : "Melakukan Instalasi java",
+      "actions" : [
+        "sudo apt update",
+        "sudo apt install default-jdk",
+        "java --version"
+      ]
+    } ,
+    {
+      "description" : "Membuat program java sederhana",
+      "actions" : [
+        "pilih folder untuk menyimpan file java",
+        "touch main.java",
+        "compile java dengan : ",
+        "java main.java"
+      ]
+    }
    ]
-   
  }
