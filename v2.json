@@ -1,0 +1,74 @@
+{
+  "tutorial": {
+    "title": "Docker Installation Tutorial (Terminal)",
+    "description": "Step-by-step guide to install Docker and Docker Compose on your system using terminal commands.",
+    "steps": [
+      {
+        "step_number": 1,
+        "title": "Update Package Repository",
+        "description": "Before installing Docker and Docker Compose, update the package repository to ensure you have the latest information.",
+        "instructions": [
+          "Open your command line interface (CLI) in a virtual machine or Linux."
+        ]
+      },
+      {
+        "step_number": 2,
+        "title": "Install Docker Dependencies",
+        "description": "Install the necessary dependencies required for Docker installation.",
+        "instructions": [
+          "Run the appropriate command for your Linux distribution to install dependencies:",
+          "- For Debian/Ubuntu: sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common",
+          "- For CentOS: sudo yum install -y yum-utils device-mapper-persistent-data lvm2"
+        ]
+      },
+      {
+        "step_number": 3,
+        "title": "Add Docker Repository",
+        "description": "Add Docker's official GPG key and repository to your system.",
+        "instructions": [
+          "Run the command to add Docker's GPG key:",
+          "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -",
+          "Add Docker repository to your system:",
+          "sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable'"
+        ]
+      },
+      {
+        "step_number": 4,
+        "title": "Install Docker Engine",
+        "description": "Install Docker Engine (Community Edition) on your system.",
+        "instructions": [
+          "Update the package index again:",
+          "sudo apt-get update",
+          "Install Docker Engine:",
+          "sudo apt-get install -y docker-ce docker-ce-cli containerd.io"
+        ]
+      },
+      {
+        "step_number": 5,
+        "title": "Install Docker Compose",
+        "description": "Install Docker Compose on your system.",
+        "instructions": [
+          "Download the latest stable release of Docker Compose:",
+          "sudo curl -L \"https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose",
+          "Apply executable permissions to the Docker Compose binary:",
+          "sudo chmod +x /usr/local/bin/docker-compose",
+          "Verify the installation by checking the version:",
+          "docker-compose --version"
+        ]
+      },
+      {
+        "step_number": 6,
+        "title": "Verify Docker Installation",
+        "description": "Verify that Docker Engine and Docker Compose have been successfully installed on your system.",
+        "instructions": [
+          "Check Docker version:",
+          "docker --version",
+          "Check Docker Compose version:",
+          "docker-compose --version",
+          "Run a test container:",
+          "docker run hello-world"
+        ]
+      }
+    ]
+  }
+}
